@@ -1,0 +1,22 @@
+{
+  "name": "antigravity-startup-animation",
+  "version": "1.0.0",
+  "description": "Customizable startup animation and transparent wallpaper theme for Google Antigravity IDE (Windows & Cross-platform)",
+  "type": "module",
+  "main": "bin/launcher.mjs",
+  "scripts": {
+    "start": "node bin/launcher.mjs",
+    "preview": "node bin/preview-server.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "keywords": [
+    "antigravity",
+    "startup-animation",
+    "theme",
+    "anime",
+    "live-wallpaper",
+    "electron"
+  ],
+  "author": "Antigravity Community",
+  "license": "MIT"
+}

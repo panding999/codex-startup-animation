@@ -1,30 +1,303 @@
-/* One stationary wallpaper beneath the native app surfaces. No blur or frame loop.
-   Layout anchors and token names verified against Codex 26.924.22138. */
-html[data-aemeath-skin]{
-  --aemeath-base:20 18 24;
-  --app-color-background-surface:transparent!important;
-  --app-color-background-surface-under:transparent!important;
-  --app-color-background-editor-opaque:rgb(var(--aemeath-base)/.32)!important;
-  --app-color-background-card:rgb(var(--aemeath-base)/.32)!important;
-  --color-token-side-bar-background:transparent!important;
-  --color-token-bg-primary:transparent!important;
-  --color-token-main-surface-primary:transparent!important;
-  --color-surface:transparent!important;
-  --color-surface-secondary:transparent!important;
-  --color-surface-tertiary:rgb(var(--aemeath-base)/.32)!important;
-  --chat-background-color:transparent!important;
-  --composer-background-color:rgb(var(--aemeath-base)/.68)!important;
-  --app-shell-panel-background:transparent!important;
-  --app-shell-tab-background:rgb(var(--aemeath-base)/.32)!important;
-  background:rgb(var(--aemeath-base))!important;
+/* Antigravity Anime Cyber Theme (Aura Inspired) & High-Performance Ambient Wallpaper */
+:root,
+html[data-antigravity-skin],
+html[data-antigravity-skin] body,
+html[data-antigravity-skin] .dark,
+html[data-antigravity-skin] [data-theme=dark] {
+  /* Aura Dark Harmonized Color Palette */
+  --antigravity-base: 21 20 27;           /* Aura Deep Dark #15141b */
+  --antigravity-tint-rgb: 162 119 255;    /* Aura Soft Purple #a277ff */
+  --antigravity-violet-rgb: 97 255 202;   /* Aura Mint/Cyan #61ffca */
+  --antigravity-pink-rgb: 246 148 255;    /* Aura Magenta/Pink #f694ff */
+  --antigravity-editor-opacity: 0.88;     /* Comfortable Dark with Light Clear Translucency */
+  --antigravity-wallpaper-opacity: 0.40;
+  --antigravity-wash: 0.60;
+
+  /* Antigravity / Tailwind UI Core Tokens */
+  --color-background: rgba(var(--antigravity-base) / var(--antigravity-editor-opacity, 0.88)) !important;
+  --background: rgba(var(--antigravity-base) / var(--antigravity-editor-opacity, 0.88)) !important;
+  --sidebar: rgba(18 16 23 / 0.82) !important;
+  --color-sidebar: rgba(18 16 23 / 0.82) !important;
+  --color-sidebar-secondary: rgba(28 25 36 / 0.85) !important;
+  --color-card: rgba(26 24 34 / 0.78) !important;
+  --card: rgba(26 24 34 / 0.78) !important;
+  --color-primary: rgb(var(--antigravity-tint-rgb)) !important;
+  --primary: rgb(var(--antigravity-tint-rgb)) !important;
+  --color-border: rgba(var(--antigravity-tint-rgb) / 0.22) !important;
+  --border: rgba(var(--antigravity-tint-rgb) / 0.22) !important;
+  --color-muted: rgba(28 25 36 / 0.75) !important;
+  --muted: rgba(28 25 36 / 0.75) !important;
+  --color-popover: rgba(21 20 27 / 0.94) !important;
+  --popover: rgba(21 20 27 / 0.94) !important;
+  --color-foreground: #edecee !important;
+  --foreground: #edecee !important;
+
+  /* Antigravity Syntax Highlighting Tokens (Aura Theme Palette) */
+  --syntax-comment: #6d6d84 !important;
+  --syntax-tag: rgb(var(--antigravity-pink-rgb)) !important;
+  --syntax-attr-name: rgb(var(--antigravity-tint-rgb)) !important;
+  --syntax-default-fg: #edecee !important;
+  --syntax-regex: #ff6767 !important;
+  --color-code: #edecee !important;
+  --code-foreground: #edecee !important;
+  --editor-code-block-background: rgba(var(--antigravity-base) / 0.65) !important;
+
+  /* VS Code Core Surface Overrides (High Readability & Clear Glassmorphism) */
+  --vscode-editor-background: rgba(var(--antigravity-base) / var(--antigravity-editor-opacity, 0.88)) !important;
+  --vscode-sideBar-background: rgba(18 16 23 / 0.82) !important;
+  --vscode-sideBarSectionHeader-background: rgba(24 22 32 / 0.85) !important;
+  --vscode-activityBar-background: rgba(18 16 23 / 0.88) !important;
+  --vscode-statusBar-background: rgba(18 16 23 / 0.92) !important;
+  --vscode-statusBar-noFolderBackground: rgba(18 16 23 / 0.92) !important;
+  --vscode-titleBar-activeBackground: rgba(18 16 23 / 0.90) !important;
+  --vscode-titleBar-inactiveBackground: rgba(18 16 23 / 0.75) !important;
+  --vscode-panel-background: rgba(21 20 27 / 0.85) !important;
+  --vscode-tab-activeBackground: rgba(var(--antigravity-tint-rgb) / 0.16) !important;
+  --vscode-tab-inactiveBackground: rgba(var(--antigravity-base) / 0.45) !important;
+  --vscode-editorGroupHeader-tabsBackground: rgba(var(--antigravity-base) / 0.60) !important;
+  --vscode-editorWidget-background: rgba(21 20 27 / 0.92) !important;
+  --vscode-editorSuggestWidget-background: rgba(21 20 27 / 0.94) !important;
+  --vscode-menu-background: rgba(21 20 27 / 0.94) !important;
+  --vscode-quickInput-background: rgba(21 20 27 / 0.94) !important;
+  --vscode-input-background: rgba(15 14 20 / 0.86) !important;
+  --vscode-input-border: rgba(var(--antigravity-tint-rgb) / 0.35) !important;
+
+  /* High-Contrast Foreground & Readability */
+  --vscode-foreground: #edecee !important;
+  --vscode-editor-foreground: #edecee !important;
+  --vscode-descriptionForeground: #9493a8 !important;
+  --vscode-disabledForeground: #6d6d84 !important;
+  --vscode-sideBar-foreground: #cbd5e1 !important;
+  --vscode-tab-activeForeground: #ffffff !important;
+  --vscode-tab-inactiveForeground: #9493a8 !important;
+  --vscode-statusBar-foreground: #cbd5e1 !important;
+  --vscode-activityBar-foreground: #ffffff !important;
+  --vscode-activityBar-inactiveForeground: rgba(148, 147, 168, 0.6) !important;
+
+  /* Cyber & Aura Accent Colors */
+  --vscode-focusBorder: rgba(var(--antigravity-tint-rgb) / 0.85) !important;
+  --vscode-activityBarBadge-background: rgb(var(--antigravity-tint-rgb)) !important;
+  --vscode-activityBarBadge-foreground: #0e0d13 !important;
+  --vscode-badge-background: rgba(var(--antigravity-tint-rgb) / 0.25) !important;
+  --vscode-badge-foreground: rgb(var(--antigravity-tint-rgb)) !important;
+  --vscode-button-background: rgb(var(--antigravity-tint-rgb)) !important;
+  --vscode-button-foreground: #0e0d13 !important;
+  --vscode-button-hoverBackground: rgba(var(--antigravity-tint-rgb) / 0.85) !important;
+  --vscode-progressBar-background: rgb(var(--antigravity-tint-rgb)) !important;
+  --vscode-editorCursor-foreground: rgb(var(--antigravity-tint-rgb)) !important;
+  --vscode-editor-selectionBackground: rgba(var(--antigravity-tint-rgb) / 0.26) !important;
+  --vscode-editorLineNumber-activeForeground: rgb(var(--antigravity-tint-rgb)) !important;
+  --vscode-editorLineNumber-foreground: #4e4d65 !important;
+  --vscode-tab-activeBorderTop: 2px solid rgb(var(--antigravity-tint-rgb)) !important;
+  --vscode-tab-activeBorder: 2px solid rgb(var(--antigravity-tint-rgb)) !important;
+
+  /* Antigravity Modern AI Surface Tokens */
+  --app-color-background-surface: transparent !important;
+  --app-color-background-surface-under: transparent !important;
+  --app-color-background-editor-opaque: rgba(var(--antigravity-base) / var(--antigravity-editor-opacity, 0.88)) !important;
+  --app-color-background-card: rgba(26 24 34 / 0.78) !important;
+  --color-token-side-bar-background: rgba(18 16 23 / 0.82) !important;
+  --color-token-bg-primary: transparent !important;
+  --color-token-main-surface-primary: transparent !important;
+  --color-surface: transparent !important;
+  --color-surface-secondary: rgba(var(--antigravity-base) / 0.6) !important;
+  --color-surface-tertiary: rgba(var(--antigravity-base) / 0.75) !important;
+  --chat-background-color: transparent !important;
+  --composer-background-color: rgba(18 16 23 / 0.88) !important;
+  --app-shell-panel-background: rgba(21 20 27 / 0.82) !important;
+  --app-shell-tab-background: rgba(var(--antigravity-base) / 0.50) !important;
 }
-html[data-aemeath-skin][data-theme=light],html[data-aemeath-skin]:has(body[data-theme=light]){--aemeath-base:250 248 251}
-@media(prefers-color-scheme:light){html[data-aemeath-skin]:not([data-theme=dark]):not(:has(body[data-theme=dark])){--aemeath-base:250 248 251}}
-html[data-aemeath-skin] body{
-  background-color:rgb(var(--aemeath-base))!important;
-  background-image:linear-gradient(rgb(var(--aemeath-base)/var(--aemeath-wash,.58)),rgb(var(--aemeath-base)/var(--aemeath-wash,.58))),var(--aemeath-wallpaper)!important;
-  background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;background-attachment:fixed!important;
+
+/* Antigravity Shell Transparency & Aura Glass Overrides */
+html[data-antigravity-skin] :is(
+  #root,
+  #root > div,
+  .dark:not(body),
+  [data-theme=dark]:not(body),
+  .h-full.w-full,
+  .h-screen.w-screen,
+  .monaco-workbench,
+  [data-app-shell-frame],
+  [data-app-shell-page-surface=true],
+  .monaco-grid-view,
+  .split-view-container,
+  .split-view-view
+) {
+  position: relative !important;
+  z-index: 2 !important;
+  background: transparent !important;
+  background-color: transparent !important;
 }
-html[data-aemeath-skin] :is(#root,[data-app-shell-frame],[data-app-shell-page-surface=true]){background:transparent!important}
-html[data-aemeath-skin] .app-shell-left-panel{background:rgb(var(--aemeath-base)/.18)!important}
-/* Menus, dialogs and floating panels keep their original opaque theme tokens. */
+
+html[data-antigravity-skin] .bg-background {
+  background-color: rgba(var(--antigravity-base) / var(--antigravity-editor-opacity, 0.88)) !important;
+}
+
+html[data-antigravity-skin] .bg-card {
+  background-color: rgba(26 24 34 / 0.78) !important;
+  border: 1px solid rgba(var(--antigravity-tint-rgb) / 0.22) !important;
+}
+
+html[data-antigravity-skin] .bg-sidebar {
+  background-color: rgba(18 16 23 / 0.82) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-right: 1px solid rgba(var(--antigravity-tint-rgb) / 0.22) !important;
+}
+
+html[data-antigravity-skin] .bg-sidebar-secondary {
+  background-color: rgba(28 25 36 / 0.85) !important;
+}
+
+html[data-antigravity-skin] .bg-sidebar-muted {
+  background-color: rgba(24 22 32 / 0.75) !important;
+}
+
+html[data-antigravity-skin] :is(.border, .border-border, [class*="border-border"]) {
+  border-color: rgba(var(--antigravity-tint-rgb) / 0.22) !important;
+}
+
+/* Background Host Setup */
+html[data-antigravity-skin] body {
+  background-color: rgb(var(--antigravity-base)) !important;
+  background-image:
+    radial-gradient(ellipse 90% 70% at 85% 25%, rgba(var(--antigravity-tint-rgb) / 0.08) 0%, transparent 65%),
+    radial-gradient(ellipse 70% 60% at 15% 85%, rgba(var(--antigravity-violet-rgb) / 0.06) 0%, transparent 65%),
+    linear-gradient(rgba(var(--antigravity-base) / var(--antigravity-wash, 0.60)), rgba(var(--antigravity-base) / var(--antigravity-wash, 0.60))) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+/* Live Video Wallpaper & Scrim Layer Architecture */
+#antigravity-live-video-wallpaper {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  will-change: transform !important;
+  transform: translate3d(0, 0, 0) !important;
+  transition: opacity 0.4s ease !important;
+}
+
+#antigravity-wallpaper-scrim {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  background:
+    radial-gradient(ellipse 85% 75% at 40% 45%, rgba(var(--antigravity-base) / 0.70) 0%, rgba(var(--antigravity-base) / 0.40) 100%),
+    linear-gradient(180deg, rgba(var(--antigravity-base) / 0.35) 0%, rgba(var(--antigravity-base) / 0.65) 100%) !important;
+  transition: opacity 0.4s ease !important;
+}
+
+/* Transparency for Top Shell Layers */
+html[data-antigravity-skin] :is(
+  #root,
+  .monaco-workbench,
+  [data-app-shell-frame],
+  [data-app-shell-page-surface=true],
+  .monaco-grid-view
+) {
+  position: relative !important;
+  z-index: 2 !important;
+  background: transparent !important;
+}
+
+/* Lightweight Frosted Glass on Static Chrome (Sidebar, ActivityBar, Panel) */
+html[data-antigravity-skin] :is(
+  .part.sidebar,
+  .app-shell-left-panel,
+  .part.activitybar,
+  .part.panel
+) {
+  background: rgba(var(--antigravity-base) / 0.75) !important;
+  backdrop-filter: blur(10px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(140%) !important;
+  border-right: 1px solid rgba(var(--antigravity-tint-rgb) / 0.15) !important;
+}
+
+/* High-Performance Editor Surface (NO Heavy Blur = Butter-Smooth 60/120 FPS Scrolling) */
+html[data-antigravity-skin] .part.editor {
+  background: rgba(var(--antigravity-base) / var(--antigravity-editor-opacity, 0.82)) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Active and Inactive Editor Tabs */
+html[data-antigravity-skin] .tab.active {
+  background: rgba(var(--antigravity-tint-rgb) / 0.15) !important;
+  border-bottom: 2px solid rgb(var(--antigravity-tint-rgb)) !important;
+  border-top: 2px solid rgb(var(--antigravity-tint-rgb)) !important;
+  color: #ffffff !important;
+}
+
+html[data-antigravity-skin] .tab:not(.active) {
+  background: rgba(var(--antigravity-base) / 0.50) !important;
+  color: #94a3b8 !important;
+}
+
+/* Status Bar & Title Bar */
+html[data-antigravity-skin] :is(.part.statusbar, .part.titlebar) {
+  background: rgba(var(--antigravity-base) / 0.90) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-top: 1px solid rgba(var(--antigravity-tint-rgb) / 0.12) !important;
+}
+
+/* Floating AI Composer / Chat Input Bar */
+html[data-antigravity-skin] :is(
+  .composer-bar,
+  [data-component="composer-container"],
+  .chat-input-container,
+  .inline-chat-widget,
+  .composer-parent
+) {
+  background: rgba(var(--antigravity-base) / 0.88) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(var(--antigravity-tint-rgb) / 0.35) !important;
+  box-shadow: 0 0 20px rgba(var(--antigravity-tint-rgb) / 0.14), 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  border-radius: 12px !important;
+}
+
+/* Subtle Glowing Accents on Focus */
+html[data-antigravity-skin] input:focus,
+html[data-antigravity-skin] textarea:focus {
+  border-color: rgb(var(--antigravity-tint-rgb)) !important;
+  box-shadow: 0 0 12px rgba(var(--antigravity-tint-rgb) / 0.30) !important;
+}
+
+/* Sleek Minimalist Scrollbars */
+html[data-antigravity-skin] ::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+html[data-antigravity-skin] ::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 4px;
+}
+
+html[data-antigravity-skin] ::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--antigravity-tint-rgb));
+}
+
+/* Monaco Syntax Highlighting Tokens (Matching Anime Opening Theme) */
+html[data-antigravity-skin] .monaco-editor .mtk1 { color: #e2e8f0 !important; }
+html[data-antigravity-skin] .monaco-editor .mtk3 { color: rgb(var(--antigravity-tint-rgb)) !important; }
+html[data-antigravity-skin] .monaco-editor .mtk4 { color: #64748b !important; font-style: italic !important; }
+html[data-antigravity-skin] .monaco-editor .mtk5 { color: #f472b6 !important; }
+html[data-antigravity-skin] .monaco-editor .mtk6 { color: rgb(var(--antigravity-violet-rgb)) !important; font-weight: 500 !important; }
+html[data-antigravity-skin] .monaco-editor .mtk7 { color: #818cf8 !important; }
+html[data-antigravity-skin] .monaco-editor .mtk8 { color: #60a5fa !important; }
+html[data-antigravity-skin] .monaco-editor .mtk9 { color: #f8fafc !important; }
+html[data-antigravity-skin] .monaco-editor .mtk10 { color: rgb(var(--antigravity-tint-rgb)) !important; }
+html[data-antigravity-skin] .monaco-editor .mtk11 { color: rgb(var(--antigravity-violet-rgb)) !important; }
+html[data-antigravity-skin] .monaco-editor .mtk12 { color: #fbbf24 !important; }

@@ -1,23 +1,14 @@
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
 .build/
 dist/
-.DS_Store
-__pycache__/
-
-# Local source-image collections; runtime defaults below are versioned.
-assets/bg1/
-assets/bg2/
-assets/codex-pink.png
-
-# Reference-video inspection is only used during local development.
-tools/extract-reference.swift
+temp-*/
 *.mp4
 *.mov
-*.log
-*.tmp
-
-# Local credentials and editor state.
+*.webm
+assets/user-config.json
 .env
 .env.*
 !.env.example
-.vscode/
-.idea/
